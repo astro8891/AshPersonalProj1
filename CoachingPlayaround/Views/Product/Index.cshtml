@@ -1,0 +1,19 @@
+﻿@Styles.Render("~/Content/products.css")
+@{
+    ViewBag.Title = "Products";
+    List<Item> items = ViewBag.items;
+}
+
+<h2>Products</h2>
+<table>
+    @foreach (var item in items)
+    {
+
+        <tr>
+            <td><a href="~/Product/Details?ID=@item.ID">@item.Name</a></td>
+            <td>@item.Price</td>
+            <td>@item.Description</td>
+        </tr>
+
+    }
+</table>
